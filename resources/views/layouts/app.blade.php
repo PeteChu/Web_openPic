@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('style')
 
     <!-- Scripts -->
     <script>
@@ -53,6 +54,11 @@
                             <li><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
                             <li><a href="{{ route('register') }}">สมัครสมาชิก</a></li>
                         @else
+                          <li><a href="#">หน้าแรก</a></li>
+                          <li><a href="#">จัดการรูปภาพ</a></li>
+                          <li><a href="#"></a></li>
+                          <li><a href="#"></a></li>
+                          <li><a href="#"></a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -84,9 +90,20 @@
           </div>
         </div>
 
+        <footer class='footer'>
+          <div class="container" style="margin-top: 10px">
+            <span>&copy; <?php echo date("Y"); ?>, Computer Science Team. </span>
+          </div>
+        </footer>
+
     </div>
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    @yield('script')
+
+
 </body>
 </html>

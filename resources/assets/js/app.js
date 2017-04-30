@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('../../../public/js/jquery.js');
 
 window.Vue = require('vue');
 
@@ -16,7 +17,9 @@ window.Vue = require('vue');
  */
 
 Vue.component('example', require('./components/Example.vue'));
-Vue.component('button123', require('./components/Test.vue'));
+Vue.component('twobytwo', require('./components/twobytwo.vue'));
+Vue.component('threebythree', require('./components/threebythree.vue'));
+Vue.component('threebyfour', require('./components/threebyfour.vue'));
 
 
 const app = new Vue({

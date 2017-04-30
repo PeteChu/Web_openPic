@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/play/{grid?}', function ($grid) {
+  return view('play',['grid'=> $grid]);
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
