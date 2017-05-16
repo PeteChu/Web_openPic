@@ -19,6 +19,7 @@
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
+
     </script>
 </head>
 <body>
@@ -54,9 +55,9 @@
                             <li><a href="{{ route('login') }}">เข้าสู่ระบบ</a></li>
                             <li><a href="{{ route('register') }}">สมัครสมาชิก</a></li>
                         @else
-                          <li><a href="#">หน้าแรก</a></li>
-                          <li><a href="#">จัดการรูปภาพ</a></li>
-                          <li><a href="#"></a></li>
+                          <li><a href="{{ url('/') }}">หน้าแรก</a></li>
+                          <li><a href="{{ url('/album') }}">อัลบั้ม</a></li>
+                          <li><a href="{{ url('/photoManage') }}">จัดการรูปภาพ</a></li>
                           <li><a href="#"></a></li>
                           <li><a href="#"></a></li>
                             <li class="dropdown">

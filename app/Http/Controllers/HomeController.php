@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function album()
+    {
+      return view('album');
+    }
+
+    public function play( $album,$pName, $grid)
+    {
+      return view('play', ['grid' => $grid, 'pName' => $pName], ['album' => $album]);
+    }
 }

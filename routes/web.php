@@ -14,12 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-Route::get('/play/{grid?}', function ($grid) {
-  return view('play',['grid'=> $grid]);
-});
+//
+// Route::get('/play/{grid?}', function ($grid) {
+//   return view('play',['grid'=> $grid]);
+// });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/play/{album}/{pName}/{grid}', 'HomeController@play');
+
+Route::get('/album', 'albumsController@index');
+Route::get('/photoManage', 'photoController@index');

@@ -16,10 +16,11 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
-Vue.component('twobytwo', require('./components/twobytwo.vue'));
-Vue.component('threebythree', require('./components/threebythree.vue'));
-Vue.component('threebyfour', require('./components/threebyfour.vue'));
+Vue.component('example', require('./components/Example.vue'))
+Vue.component('twobytwo', require('./components/twobytwo.vue'))
+Vue.component('threebythree', require('./components/threebythree.vue'))
+Vue.component('threebyfour', require('./components/threebyfour.vue'))
+// require('./components/albums.vue')
 
 
 const app = new Vue({
