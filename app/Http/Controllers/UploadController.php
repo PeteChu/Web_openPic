@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UploadRequest;
 
-class photoController extends Controller
+class UploadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class photoController extends Controller
     public function index()
     {
         //
-        return view('photoManage');
+        return view('uploadPhotos');
     }
 
     /**
@@ -33,9 +34,12 @@ class photoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UploadRequest $request)
     {
-        //
+        foreach ($request->photos as $photo) {
+            $filename = $photo->store('photos');
+        }
+        return 'Upload successful!';
     }
 
     /**

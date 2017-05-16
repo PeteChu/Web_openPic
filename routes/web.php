@@ -26,3 +26,6 @@ Route::get('/play/{album}/{pName}/{grid}', 'HomeController@play');
 
 Route::get('/album', 'albumsController@index');
 Route::get('/photoManage', 'photoController@index');
+
+Route::get('/upload', 'UploadController@index');
+Route::post('/upload', 'UploadController@store');

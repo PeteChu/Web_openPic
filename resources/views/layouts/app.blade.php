@@ -57,7 +57,7 @@
                         @else
                           <li><a href="{{ url('/') }}">หน้าแรก</a></li>
                           <li><a href="{{ url('/album') }}">อัลบั้ม</a></li>
-                          <li><a href="{{ url('/photoManage') }}">จัดการรูปภาพ</a></li>
+                          <li><a href="{{ url('/upload') }}">จัดการรูปภาพ</a></li>
                           <li><a href="#"></a></li>
                           <li><a href="#"></a></li>
                             <li class="dropdown">
