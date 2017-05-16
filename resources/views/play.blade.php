@@ -24,11 +24,10 @@
     $(document).ready(function () {
       //670505
       var image = new Image();
-      image.src = "/images/{{$album}}/{{$pName}}.jpg";
+      image.src = "/storage/photos/{{$album}}/{{$pName}}.jpg";
       $('table').css('background','URL('+image.src+')')
                 .css('background-repeat','no-repeat')
                 .css('background-size','cover');
-
     })
 
   </script>

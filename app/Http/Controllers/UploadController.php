@@ -37,7 +37,7 @@ class UploadController extends Controller
     public function store(UploadRequest $request)
     {
         foreach ($request->photos as $photo) {
-            $filename = $photo->store('photos');
+            $filename = $photo->store("/photos");
         }
         return 'Upload successful!';
     }
