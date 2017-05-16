@@ -18,6 +18,7 @@
           {{ csrf_field() }}
           ชื่ออัลบั้ม
           <input type="text" name="albumName" />
+          <input type="text" name="username" value="{{Auth::user()->name}}" hidden>
           <br /><br />
           <input type="file" name="photos[]" multiple />
           <br /><br />

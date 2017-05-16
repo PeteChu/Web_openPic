@@ -36,8 +36,10 @@ class UploadController extends Controller
      */
     public function store(UploadRequest $request)
     {
+        $albumName = $_POST['albumName'];
+        $Username = $_POST['username'];
         foreach ($request->photos as $photo) {
-            $filename = $photo->store("/photos");
+            $filename = $photo->store("/photos/$Username/$albumName");
         }
         return 'Upload successful!';
     }
