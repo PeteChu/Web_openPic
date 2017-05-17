@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\UploadRequest;
 use App\ProductsPhoto;
+use Illuminate\Support\Facades\DB;
 class UploadController extends Controller
 {
     public function __construct()
@@ -43,14 +44,14 @@ class UploadController extends Controller
     {
         $albumName = $_POST['albumName'];
         $Username = $_POST['username'];
+        $id = DB::table('users')->select('id')->where('name',$Username)->get();
         foreach ($request->photos as $photo) {
             $filename = $photo->store("/photos/$Username/$albumName");
             ProductsPhoto::create([
-              
               'photo_path'=>$filename,
               'album_name'=>$albumName,
               'grid'=>'5',
-              'uid'=>'789'
+              'uid'=>json_decode($id,true)[0]['id']
 
             ]);
         }
