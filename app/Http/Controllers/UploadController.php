@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\UploadRequest;
-
+use App\ProductsPhoto;
 class UploadController extends Controller
 {
     /**
@@ -23,9 +23,9 @@ class UploadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(array $data)
     {
-        //
+
     }
 
     /**
@@ -40,8 +40,16 @@ class UploadController extends Controller
         $Username = $_POST['username'];
         foreach ($request->photos as $photo) {
             $filename = $photo->store("/photos/$Username/$albumName");
+            ProductsPhoto::create([
+              
+              'photo_path'=>$filename,
+              'album_name'=>$albumName,
+              'grid'=>'5',
+              'uid'=>'789'
+
+            ]);
         }
-        return 'Upload successful!';
+        return 'Upload Successful!';
     }
 
     /**
@@ -88,4 +96,6 @@ class UploadController extends Controller
     {
         //
     }
+
+
 }
