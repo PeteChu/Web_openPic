@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('headScript')
+  <link href="bootstrap-fileinput/css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
+@stop
+
 @section('content')
 
 <div class="col-md-12">
@@ -16,19 +20,38 @@
 
         <form action="/upload" method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
-          ชื่ออัลบั้ม
-          <input type="text" name="albumName" />
-          <input type="text" name="username" value="{{Auth::user()->name}}" hidden>
-          <br /><br />
-          <input class='' type="file" name="photos[]" multiple />
-          <br /><br />
-          <input class='btn btn-success' type="submit" value="อัพโหลด" />
-
+          <div class="col-md-12">
+            <div class="col-md-10 col-md-offset-1">
+              <label>ชื่ออัลบั้ม</label>
+              <input type="text" class='form-control' name="albumName" />
+              <input type="text" name="username" value="{{ Auth::user()->name }}" hidden>
+              <br /><br />
+              <input id="input-id" type="file" name="photos[]" multiple data-preview-file-type="text" >
+            </div>
+          </div>
         </form>
-
+        </form>
       </div>
     </div>
   </div>
 </div>
+
+@stop
+
+
+@section('script')
+
+  <script src='{{asset('bootstrap-fileinput/js/fileinput.js')}}'></script>
+
+  <script>
+    $(document).ready( function() {
+      $('#input-id').fileinput({
+        'required': true,
+        'allowedFileExtensions':['jpg','bmp','png'],
+        'maxFileSize': 5120,
+        'maxFileCount': 24
+      });
+    });
+  </script>
 
 @stop
