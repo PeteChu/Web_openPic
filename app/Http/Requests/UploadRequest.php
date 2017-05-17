@@ -24,7 +24,8 @@ class UploadRequest extends FormRequest
      public function rules()
      {
          $rules = [
-              'albumName' => 'required'
+              'albumName' => 'required',
+              'photos' => 'required'
           ];
          $photos = count($this->input('photos'));
          foreach (range(0, $photos) as $index) {

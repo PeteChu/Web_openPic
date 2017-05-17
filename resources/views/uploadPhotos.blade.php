@@ -20,9 +20,10 @@
           <input type="text" name="albumName" />
           <input type="text" name="username" value="{{Auth::user()->name}}" hidden>
           <br /><br />
-          <input type="file" name="photos[]" multiple />
+          <input class='' type="file" name="photos[]" multiple />
           <br /><br />
-          <input type="submit" value="Upload" />
+          <input class='btn btn-success' type="submit" value="อัพโหลด" />
+
         </form>
 
       </div>
