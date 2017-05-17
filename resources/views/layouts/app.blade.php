@@ -10,6 +10,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    @yield('headScript')
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('style')
@@ -57,7 +60,7 @@
                         @else
                           <li><a href="{{ url('/') }}">หน้าแรก</a></li>
                           <li><a href="{{ url('/album') }}">อัลบั้ม</a></li>
-                          <li><a href="{{ url('/upload') }}">จัดการรูปภาพ</a></li>
+                          <li><a href="{{ url('/upload') }}">อัพโหลดรูปภาพ</a></li>
                           <li><a href="#"></a></li>
                           <li><a href="#"></a></li>
                             <li class="dropdown">
@@ -91,18 +94,11 @@
           </div>
         </div>
 
-        <footer class='footer'>
-          <div class="container" style="margin-top: 10px">
-            <span>&copy; <?php echo date("Y"); ?>, Computer Science Team. </span>
-          </div>
-        </footer>
-
     </div>
 
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/jquery.js') }}"></script>
     @yield('script')
 
 

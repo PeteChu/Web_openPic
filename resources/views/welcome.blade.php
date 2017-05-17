@@ -1,7 +1,36 @@
 @extends('layouts.app')
+@if(Auth::user())
+  @section('content')
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>ยินดีต้อนรับ, คุณ {{ Auth::user()->name }}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>อัลบั้มของคุณ</h4>
+            </div>
+            <div class="panel-body">
 
-@section('content')
-  <example></example>
+            </div>
 
+          </div>
 
-@stop
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>Quick Play</h4>
+            </div>
+            <div class="panel-body">
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  @stop
+@endif
