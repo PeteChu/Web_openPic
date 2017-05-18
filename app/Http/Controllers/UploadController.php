@@ -48,7 +48,7 @@ class UploadController extends Controller
         foreach ($request->photos as $photo) {
             $filename = $photo->store("/photos/$Username/$albumName");
             ProductsPhoto::create([
-              'photo_path'=>$filename,
+              'photo_path'=>'/storage/'.$filename,
               'album_name'=>$albumName,
               'grid'=>'5',
               'uid'=>json_decode($id,true)[0]['id']
@@ -66,6 +66,9 @@ class UploadController extends Controller
      */
     public function show($id)
     {
+      foreach ($variable as $key => $value) {
+        # code...
+      }
         //
     }
 
