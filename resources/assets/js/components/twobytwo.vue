@@ -16,6 +16,7 @@
     <div>
       <form class="form-group">
         <button class="btn btn-success" type="button" name="button">รูปก่อนหน้า</button>
+        <button class="btn btn-success" type="button" name="button" id='answer'>เฉลย</button>
         <button class="btn btn-success" type="button" name="button">รูปต่อไป</button>
       </form>
 
@@ -28,6 +29,10 @@
   $(document).ready(function () {
     $('td').click(function () {
       $(this).css('visibility', 'hidden');
+    })
+
+    $('#answer').click(function () {
+      $('td').css('visibility', 'hidden');
     })
   })
 </script>

@@ -1794,10 +1794,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 $(document).ready(function () {
   $('td').click(function () {
     $(this).css('visibility', 'hidden');
+  });
+  $('#answer').click(function () {
+    $('td').css('visibility', 'hidden');
   });
 });
 
@@ -1837,10 +1841,14 @@ $(document).ready(function () {
 //
 //
 //
+//
 
 $(document).ready(function () {
   $('td').click(function () {
     $(this).css('visibility', 'hidden');
+  });
+  $('#answer').click(function () {
+    $('td').css('visibility', 'hidden');
   });
 });
 
@@ -1874,10 +1882,15 @@ $(document).ready(function () {
 //
 //
 //
+//
 
 $(document).ready(function () {
   $('td').click(function () {
     $(this).css('visibility', 'hidden');
+  });
+
+  $('#answer').click(function () {
+    $('td').css('visibility', 'hidden');
   });
 });
 
@@ -32016,6 +32029,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "btn btn-success",
     attrs: {
       "type": "button",
+      "name": "button",
+      "id": "answer"
+    }
+  }, [_vm._v("เฉลย")]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-success",
+    attrs: {
+      "type": "button",
       "name": "button"
     }
   }, [_vm._v("รูปต่อไป")])])])])
@@ -32057,6 +32077,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "name": "button"
     }
   }, [_vm._v("รูปก่อนหน้า")]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-success",
+    attrs: {
+      "type": "button",
+      "name": "button",
+      "id": "answer"
+    }
+  }, [_vm._v("เฉลย")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-success",
     attrs: {
       "type": "button",
@@ -32126,6 +32153,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "name": "button"
     }
   }, [_vm._v("รูปก่อนหน้า")]), _vm._v(" "), _c('button', {
+    staticClass: "btn btn-success",
+    attrs: {
+      "type": "button",
+      "name": "button",
+      "id": "answer"
+    }
+  }, [_vm._v("เฉลย")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-success",
     attrs: {
       "type": "button",
