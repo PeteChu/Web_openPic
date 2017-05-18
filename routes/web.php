@@ -22,7 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/play/{album}/{pName}/{grid}', 'HomeController@play');
+Route::get('/play/{name}/{no}', 'HomeController@play');
 
 Route::get('/album', 'albumsController@index');
 Route::get('/photoManage', 'photoController@index');
