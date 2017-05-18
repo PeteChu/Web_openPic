@@ -50,7 +50,7 @@ class UploadController extends Controller
             ProductsPhoto::create([
               'photo_path'=>'/storage/'.$filename,
               'album_name'=>$albumName,
-              'grid'=>'5',
+              'grid'=>'2',
               'uid'=>json_decode($id,true)[0]['id']
 
             ]);

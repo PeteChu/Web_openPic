@@ -38,11 +38,10 @@
       $('table').css('background','URL('+image.src+')')
                 .css('background-repeat','no-repeat')
                 .css('background-size','cover');
-      
-      });
 
 
-
+    
+    });
 
 
 
