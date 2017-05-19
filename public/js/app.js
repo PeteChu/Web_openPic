@@ -1726,147 +1726,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 30 */
-/***/ (function(module, exports) {
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-$(document).ready(function () {
-  $('td').click(function () {
-    $(this).css('visibility', 'hidden');
-  });
-  $('#answer').click(function () {
-    $('td').css('visibility', 'hidden');
-  });
-});
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports) {
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-$(document).ready(function () {
-  $('td').click(function () {
-    $(this).css('visibility', 'hidden');
-  });
-  $('#answer').click(function () {
-    $('td').css('visibility', 'hidden');
-  });
-});
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports) {
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-$(document).ready(function () {
-  $('td').click(function () {
-    $(this).css('visibility', 'hidden');
-  });
-
-  $('#answer').click(function () {
-    $('td').css('visibility', 'hidden');
-  });
-});
-
-/***/ }),
+/* 30 */,
+/* 31 */,
+/* 32 */,
 /* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31872,7 +31734,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(30),
+  null,
   /* template */
   __webpack_require__(42),
   /* scopeId */
@@ -31906,7 +31768,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(31),
+  null,
   /* template */
   __webpack_require__(43),
   /* scopeId */
@@ -31940,7 +31802,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(32),
+  null,
   /* template */
   __webpack_require__(45),
   /* scopeId */
@@ -31988,28 +31850,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "align": "center",
       "id": "grid"
     }
-  }, [_c('tr', [_c('td', [_vm._v("1")]), _vm._v(" "), _c('td', [_vm._v("2")]), _vm._v(" "), _c('td', [_vm._v("3")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("4")]), _vm._v(" "), _c('td', [_vm._v("5")]), _vm._v(" "), _c('td', [_vm._v("6")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("7")]), _vm._v(" "), _c('td', [_vm._v("8")]), _vm._v(" "), _c('td', [_vm._v("9")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("10")]), _vm._v(" "), _c('td', [_vm._v("11")]), _vm._v(" "), _c('td', [_vm._v("12")])])])]), _vm._v(" "), _c('div', [_c('form', {
-    staticClass: "form-group"
-  }, [_c('button', {
-    staticClass: "btn btn-success",
-    attrs: {
-      "type": "button",
-      "name": "button"
-    }
-  }, [_vm._v("รูปก่อนหน้า")]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-success",
-    attrs: {
-      "type": "button",
-      "name": "button",
-      "id": "answer"
-    }
-  }, [_vm._v("เฉลย")]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-success",
-    attrs: {
-      "type": "button",
-      "name": "button"
-    }
-  }, [_vm._v("รูปต่อไป")])])])])
+  }, [_c('tr', [_c('td', [_vm._v("1")]), _vm._v(" "), _c('td', [_vm._v("2")]), _vm._v(" "), _c('td', [_vm._v("3")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("4")]), _vm._v(" "), _c('td', [_vm._v("5")]), _vm._v(" "), _c('td', [_vm._v("6")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("7")]), _vm._v(" "), _c('td', [_vm._v("8")]), _vm._v(" "), _c('td', [_vm._v("9")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("10")]), _vm._v(" "), _c('td', [_vm._v("11")]), _vm._v(" "), _c('td', [_vm._v("12")])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -32039,29 +31880,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "align": "center",
       "id": "grid"
     }
-  }, [_c('tr', [_c('td', [_vm._v("1")]), _vm._v(" "), _c('td', [_vm._v("2")]), _vm._v(" "), _c('td', [_vm._v("3")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("4")]), _vm._v(" "), _c('td', [_vm._v("5")]), _vm._v(" "), _c('td', [_vm._v("6")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("7")]), _vm._v(" "), _c('td', [_vm._v("8")]), _vm._v(" "), _c('td', [_vm._v("9")])])])]), _vm._v(" "), _c('div', [_c('form', {
-    staticClass: "form-group"
-  }, [_c('button', {
-    staticClass: "btn btn-success",
-    attrs: {
-      "type": "button",
-      "name": "button"
-    }
-  }, [_vm._v("รูปก่อนหน้า")]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-success",
-    attrs: {
-      "type": "button",
-      "name": "button",
-      "id": "answer"
-    }
-  }, [_vm._v("เฉลย")]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-success",
-    attrs: {
-      "type": "button",
-      "name": "button",
-      "id": "next"
-    }
-  }, [_vm._v("รูปต่อไป")])])])])
+  }, [_c('tr', [_c('td', [_vm._v("1")]), _vm._v(" "), _c('td', [_vm._v("2")]), _vm._v(" "), _c('td', [_vm._v("3")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("4")]), _vm._v(" "), _c('td', [_vm._v("5")]), _vm._v(" "), _c('td', [_vm._v("6")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("7")]), _vm._v(" "), _c('td', [_vm._v("8")]), _vm._v(" "), _c('td', [_vm._v("9")])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -32116,28 +31935,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "align": "center",
       "id": "grid"
     }
-  }, [_c('tr', [_c('td', [_vm._v("1")]), _vm._v(" "), _c('td', [_vm._v("2")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("3")]), _vm._v(" "), _c('td', [_vm._v("4")])])])]), _vm._v(" "), _c('div', [_c('form', {
-    staticClass: "form-group"
-  }, [_c('button', {
-    staticClass: "btn btn-success",
-    attrs: {
-      "type": "button",
-      "name": "button"
-    }
-  }, [_vm._v("รูปก่อนหน้า")]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-success",
-    attrs: {
-      "type": "button",
-      "name": "button",
-      "id": "answer"
-    }
-  }, [_vm._v("เฉลย")]), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-success",
-    attrs: {
-      "type": "button",
-      "name": "button"
-    }
-  }, [_vm._v("รูปต่อไป")])])])])
+  }, [_c('tr', [_c('td', [_vm._v("1")]), _vm._v(" "), _c('td', [_vm._v("2")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("3")]), _vm._v(" "), _c('td', [_vm._v("4")])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

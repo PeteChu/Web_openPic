@@ -17,6 +17,12 @@
      <threebyfour></threebyfour>
    @endif
 
+   <div align='center'>
+     <br>
+    <a href=" /play/{{$path[$len-1]}}/{{$no-1}} "><button class="btn btn-success" type="button" name="button">รูปก่อนหน้า</button></a>
+    <button class="btn btn-success" type="button" name="button" id='answer'>เฉลย</button>
+    <a href=" /play/{{$path[$len-1]}}/{{$no+1}} "><button class="btn btn-success" type="button" name="button" id='next'>รูปต่อไป</button></a>
+   </div>
 
 
  @stop
@@ -39,6 +45,15 @@
       $('table').css('background','URL('+image.src+')')
                 .css('background-repeat','no-repeat')
                 .css('background-size','cover');
+
+      $('td').click(function () {
+        $(this).css('visibility', 'hidden');
+      })
+
+      $('#answer').click(function () {
+        $('td').css('visibility', 'hidden');
+      })
+
     });
   </script>
 @stop
