@@ -32058,7 +32058,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "btn btn-success",
     attrs: {
       "type": "button",
-      "name": "button"
+      "name": "button",
+      "id": "next"
     }
   }, [_vm._v("รูปต่อไป")])])])])
 }]}

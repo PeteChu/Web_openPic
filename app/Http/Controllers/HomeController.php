@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     /**
@@ -31,8 +31,14 @@ class HomeController extends Controller
       return view('album');
     }
 
-    public function play( $album,$pName, $grid)
-    {
-      return view('play', ['grid' => $grid, 'pName' => $pName], ['album' => $album]);
+    public function play($name,$no){
+      $id = Auth::user();
+      $id = $id->id;
+      $path = DB::table('products_photos')->select('photo_path','grid')->where('album_name',$name)->where('uid',$id)->get();
+      $path = json_decode($path,true);
+      $len = count($path);
+      $path[$len] = $name;
+
+      return view('play',compact('path'),compact('no'));
     }
 }

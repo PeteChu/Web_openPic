@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
+use Auth;
 class albumsController extends Controller
 {
     /**
@@ -16,10 +16,21 @@ class albumsController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
-    {
-        //
-        return view('album');
+    public function index(){
+      $id = Auth::user();
+      $id = $id->id;
+      $album = DB::table('products_photos')->select('album_name')->distinct('album_name')->where('uid',$id)->get();
+      $album = json_decode($album,true);
+      $path_photo = array();
+      for($i = 0;$i<count($album);$i++){
+       $path = DB::table('products_photos')->select('photo_path')->where('album_name',$album[$i]['album_name'])->get();
+       $path = json_decode($path,true);
+         $path_photo[0][$i] = $album[$i]['album_name'];
+        for($k = 0;$k<count($path);$k++)
+          $path_photo[$album[$i]['album_name']][$k] = $path[$k]['photo_path'];
+
+      }
+        return view('album',compact('path_photo'));
     }
 
 
