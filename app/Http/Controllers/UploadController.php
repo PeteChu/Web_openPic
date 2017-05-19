@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UploadRequest;
 use App\ProductsPhoto;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\ImageManager;
+use Illuminate\Support\Facades\File;
+
 class UploadController extends Controller
 {
     public function __construct()
@@ -31,7 +34,6 @@ class UploadController extends Controller
      */
     public function create(array $data)
     {
-
     }
 
     /**
@@ -44,14 +46,24 @@ class UploadController extends Controller
     {
         $albumName = $_POST['albumName'];
         $Username = $_POST['username'];
-        $id = DB::table('users')->select('id')->where('name',$Username)->get();
+        $id = DB::table('users')->select('id')->where('name', $Username)->get();
+        $path = "app/public/photos/$Username/$albumName/";
+        $manager = new ImageManager(array('driver' => 'imagick'));
+        File::makeDirectory(storage_path($path),0777,true);
+
         foreach ($request->photos as $photo) {
-            $filename = $photo->store("/photos/$Username/$albumName");
+
+          $img = $manager->make($photo)->resize(1024,768);
+          $img->save(storage_path($path).$photo->getClientOriginalName());
+
+
+            // $filename = $photo->store($path);
+            $filename = $photo;
             ProductsPhoto::create([
               'photo_path'=>$filename,
               'album_name'=>$albumName,
               'grid'=>'5',
-              'uid'=>json_decode($id,true)[0]['id']
+              'uid'=>json_decode($id, true)[0]['id']
 
             ]);
         }
@@ -102,6 +114,4 @@ class UploadController extends Controller
     {
         //
     }
-
-
 }

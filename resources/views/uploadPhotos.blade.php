@@ -40,16 +40,18 @@
 
 
 @section('script')
-
-  <script src='{{asset('bootstrap-fileinput/js/fileinput.js')}}'></script>
+  <script src='{{ asset('bootstrap-fileinput/js/plugins/canvas-to-blob.min.js') }}'></script>
+  <script src='{{ asset('bootstrap-fileinput/js/fileinput.js') }}'></script>
 
   <script>
     $(document).ready( function() {
+
       $('#input-id').fileinput({
-        'required': true,
-        'allowedFileExtensions':['jpg','bmp','png'],
-        'maxFileSize': 5120,
-        'maxFileCount': 24
+        allowedFileExtensions:['jpg','bmp','png'],
+        maxImageWidth: 200,
+        maxImageHeight: 150,
+        resizePreference: 'height',
+        resizeImage: true
       });
     });
   </script>

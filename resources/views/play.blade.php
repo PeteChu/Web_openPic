@@ -24,7 +24,14 @@
     $(document).ready(function () {
       //670505
       var image = new Image();
+      image.onload = function () {
+        $('table').css('width', this.width)
+                  .css('height', this.height);
+      }
       image.src = "/storage/photos/{{$album}}/{{$pName}}.jpg";
+
+
+
       $('table').css('background','URL('+image.src+')')
                 .css('background-repeat','no-repeat')
                 .css('background-size','cover');
