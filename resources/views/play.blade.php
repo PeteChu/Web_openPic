@@ -19,9 +19,17 @@
 
    <div align='center'>
      <br>
+    @if(($no-1)>=0)
     <a href=" /play/{{$path[$len-1]}}/{{$no-1}} "><button class="btn btn-success" type="button" name="button">รูปก่อนหน้า</button></a>
+    @else
+    <a href=" #"><button class="btn btn-success" type="button" name="button">รูปก่อนหน้า</button></a>
+    @endif
     <button class="btn btn-success" type="button" name="button" id='answer'>เฉลย</button>
+    @if(($no+1)<$len-1)
     <a href=" /play/{{$path[$len-1]}}/{{$no+1}} "><button class="btn btn-success" type="button" name="button" id='next'>รูปต่อไป</button></a>
+    @else
+    <a href="#"><button class="btn btn-success" type="button" name="button" id='next'>รูปต่อไป</button></a>
+    @endif
    </div>
 
 
