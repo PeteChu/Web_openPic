@@ -11,13 +11,17 @@
     @php
     $no = 0;
     @endphp
+     @if(count($path_photo)>0)
       @foreach ($path_photo[0] as $name)
+
         <div class="col-md-3">
           <a href = "/play/{{$name}}/{{$no}}"><img src="{{$path_photo[$name][0]}}" style='height: 100%; width: 100%; object-fit: contain'/><br><p align = "center">{{$name}}</p></a>
       </div>
 
       @endforeach
-
+      @else
+        <h1>ไม่มีรูปภาพโว๊ยยยยยย</h1>
+      @endif
     </div>
   </div>
 </div>
