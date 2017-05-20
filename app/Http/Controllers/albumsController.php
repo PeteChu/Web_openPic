@@ -76,10 +76,14 @@ class albumsController extends Controller
     {
       $id = Auth::user();
       $id = $id->id;
-      $database = DB::table('products_photos')->select('photo_path')->where('uid',$id)->where('album_name',$album_name)->get();
+      $database = DB::table('products_photos')->select('photo_path','grid')->where('uid',$id)->where('album_name',$album_name)->get();
       $database = json_decode($database,true);
       $photos = array();
-      for($i = 0;$i<count($database);$i++)$photos[$i] = $database[$i]['photo_path'];
+
+      for($i = 0;$i<count($database);$i++){
+        $photos['photo_path'][$i] = $database[$i]['photo_path'];
+        $photos['grid'][$i] = $database[$i]['grid'];
+      }
 
         return view('albumManagement',compact('photos'));
     }
@@ -103,8 +107,10 @@ class albumsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(){
+
     //   Storage::delete($photo_path);
     // //  DB::table('products_photos')->where('photo_path',$photo_path)->delete();
       return 'Deleted';
+
     }
 }
