@@ -107,10 +107,10 @@ class albumsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(){
-    /*  $photo_path = $_POST['path0'];
-      Storage::delete($photo_path);*/
-     DB::table('products_photos')->whee('photo_path','/storage/photos/weiweieuro/fuck_me/IpqtlyM4N0hibHImbuEpS1V5iNzlcHZVhntWXSsS.png')->delete();
 
-     return view('albumManagement');
+    //   Storage::delete($photo_path);
+    // //  DB::table('products_photos')->where('photo_path',$photo_path)->delete();
+      return 'Deleted';
+
     }
 }

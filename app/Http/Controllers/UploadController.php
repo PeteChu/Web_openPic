@@ -47,25 +47,40 @@ class UploadController extends Controller
         $albumName = $_POST['albumName'];
         $Username = $_POST['username'];
         $id = DB::table('users')->select('id')->where('name', $Username)->get();
-        // $path = "app/public/photos/$Username/$albumName/";
-        // $manager = new ImageManager(array('driver' => 'imagick'));
-        // File::makeDirectory(storage_path($path),0777,true);
 
+        $path = "app/public/photos/$Username/$albumName/";
+        $manager = new ImageManager(array('driver' => 'imagick'));
+
+        if(!File::exists(storage_path($path))){
+          File::makeDirectory(storage_path($path),0777,true);
+        }
         foreach ($request->photos as $photo) {
 
-          // $img = $manager->make($photo)->resize(1024,768);
-          // $filename = $img->save(storage_path($path).$photo->getClientOriginalName());
-            $filename = $photo->store("photos/$Username/$albumName");
+          $img = $manager->make($photo);
+          $height = $img->height();
+
+          if ($height >= 1024) {
+            $grid = 3;
+            $img->resize(1024,768);
+          } elseif ($height >= 800) {
+            $grid = 2;
+          } else {
+            $grid = 1;
+          }
+
+          $img->save(storage_path($path).$photo->getClientOriginalName());
+
+            // $filename = $photo->store("photos/$Username/$albumName");
 
             ProductsPhoto::create([
-              'photo_path'=>'/storage/'.$filename,
+              'photo_path'=>"/storage/photos/$Username/$albumName/".$photo->getClientOriginalName(),
               'album_name'=>$albumName,
-              'grid'=>'2',
+              'grid'=>$grid,
               'uid'=>json_decode($id,true)[0]['id']
 
             ]);
         }
-        return 'Upload Successful!';
+        return view('uploadPhotos');
     }
 
     /**

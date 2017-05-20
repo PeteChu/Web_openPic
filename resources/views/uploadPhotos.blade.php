@@ -36,6 +36,7 @@
   </div>
 </div>
 
+
 @stop
 
 
@@ -44,14 +45,12 @@
   <script src='{{ asset('bootstrap-fileinput/js/fileinput.js') }}'></script>
 
   <script>
-    $(document).ready( function() {
 
+
+
+    $(document).ready( function() {
       $('#input-id').fileinput({
         allowedFileExtensions:['jpg','bmp','png'],
-        maxImageWidth: 200,
-        maxImageHeight: 150,
-        resizePreference: 'height',
-        resizeImage: true
       });
     });
   </script>
