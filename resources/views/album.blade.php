@@ -6,7 +6,7 @@
 <div class="col-md-12 ">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3>ยินดีต้อนรับ</h3>
+      <h3>อัลบั้มของคุณ</h3>
     </div>
 <div class="panel-body">
     @php
@@ -19,12 +19,14 @@
           <img src="{{$path_photo[$name][0]}}" style='height: 100%; width: 100%; object-fit: contain'/>
           <label>ชื่ออัลบั้ม: {{$name}}</label><br>
           <a href = "/play/{{$name}}/{{$no}}" class='btn btn-success'>เล่น</a>
-          <a href = "/play/{{$name}}/{{$no}}" class='btn btn-success'>จัดการอัลบั้ม</a>
+          <a href = "/albummanage/{{$name}}" class='btn btn-success'>จัดการอัลบั้ม</a>
         </div>
 
       @endforeach
       @else
-        <h1>ไม่มีรูปภาพโว๊ยยยยยย</h1>
+        <div class="" align='center'>
+          <h4>ไม่มีอัลบั้ม กรุณาอัพโหลดรูปภาพเพื่อสร้างอัลบั้ม</h4>
+        </div>
       @endif
     </div>
   </div>
