@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\Storage;
 class albumsController extends Controller
 {
     /**
@@ -79,7 +80,7 @@ class albumsController extends Controller
       $database = json_decode($database,true);
       $photos = array();
       for($i = 0;$i<count($database);$i++)$photos[$i] = $database[$i]['photo_path'];
-      
+
         return view('albumManagement',compact('photos'));
     }
 
@@ -92,7 +93,7 @@ class albumsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -101,8 +102,9 @@ class albumsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($photo_path){
+      Storage::delete($photo_path);
+    //  DB::table('products_photos')->where('photo_path',$photo_path)->delete();
+
     }
 }
