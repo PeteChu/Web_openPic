@@ -26,6 +26,7 @@ Route::get('/play/{name}/{no}', 'HomeController@play');
 
 Route::get('/album', 'albumsController@index');
 Route::get('/albummanage/{album_name}', 'albumsController@edit');
+Route::delete('/delete', 'albumsController@destroy');
 
 Route::get('/upload', 'UploadController@index');
 Route::post('/upload', 'UploadController@store');

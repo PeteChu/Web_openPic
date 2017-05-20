@@ -102,9 +102,9 @@ class albumsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($photo_path){
-      Storage::delete($photo_path);
-    //  DB::table('products_photos')->where('photo_path',$photo_path)->delete();
-
+    public function destroy(){
+    //   Storage::delete($photo_path);
+    // //  DB::table('products_photos')->where('photo_path',$photo_path)->delete();
+      return 'Deleted';
     }
 }
