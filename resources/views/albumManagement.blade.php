@@ -7,7 +7,11 @@
         <h3>ปรับแต่งอัลบั้มของคุณ</h3>
       </div>
       <div class="panel-body">
-
+        @foreach($photos as $photo)
+        <div class="col-md-3 thumbnail" align='center'>
+            <img src="{{$photo}}" style='height: 100%; width: 100%; object-fit: contain'/>
+          </div>
+        @endforeach
       </div>
 
     </div>
