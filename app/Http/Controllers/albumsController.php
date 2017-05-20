@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Storage;
+use File;
+
 class albumsController extends Controller
 {
     /**
@@ -108,9 +110,16 @@ class albumsController extends Controller
      */
     public function destroy(){
 
+      if(File::exists('storage/photos/admin/1/1.jpg')){
+        File::delete('storage/photos/admin/1/1.jpg');
+        return 'found, deleted';
+      }else {
+        return 'not found';
+      }
+
     //   Storage::delete($photo_path);
     // //  DB::table('products_photos')->where('photo_path',$photo_path)->delete();
-      return 'Deleted';
+
 
     }
 }
