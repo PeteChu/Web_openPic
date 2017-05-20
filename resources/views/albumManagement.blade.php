@@ -10,11 +10,11 @@
       @php $i = 0; @endphp
       <div class="panel-body">
         <form class="" action="/delete" method="post">
+          {{ csrf_field() }}
+          {{ method_field('DELETE') }}
+
           @foreach($photos['photo_path'] as $photo)
           <div class="col-md-3" align='center'>
-
-              {{ csrf_field() }}
-              {{ method_field('DELETE') }}
               <div class="col-md-12 thumbnail">
                   <img name='photos_path[]' value='{{$photo}}' src="{{$photo}}" id = "{{$i}}" style='height: 250px; object-fit: container'/><br>
                   <div>

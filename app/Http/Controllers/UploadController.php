@@ -80,7 +80,7 @@ class UploadController extends Controller
 
             ]);
         }
-        return view('uploadPhotos');
+        return view('uploadPhotos')->with('success', 'Upload Successful.');
     }
 
     /**
