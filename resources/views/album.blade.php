@@ -15,11 +15,13 @@
        @if(count($path_photo)>0)
         @foreach ($path_photo[0] as $name)
 
-          <div class="col-md-3 thumbnail" align='center'>
-            <img src="{{$path_photo[$name][0]}}" style='height: 100%; width: 100%; object-fit: contain'/>
-            <label>ชื่ออัลบั้ม: {{$name}}</label><br>
-            <a href = "/play/{{$name}}/{{$no}}" class='btn btn-success'>เล่น</a>
-            <a href = "/albummanage/{{$name}}" class='btn btn-success'>จัดการอัลบั้ม</a>
+          <div class="col-md-3 " align='center'>
+            <div class="col-md-12 thumbnail">
+              <img src="{{$path_photo[$name][0]}}" style='height: 250px; object-fit: container'/>
+              <label>ชื่ออัลบั้ม: {{$name}}</label><br>
+              <a href = "/play/{{$name}}/{{$no}}" class='btn btn-success'>เล่น</a>
+              <a href = "/albummanage/{{$name}}" class='btn btn-success'>จัดการอัลบั้ม</a>
+            </div>
           </div>
 
         @endforeach
