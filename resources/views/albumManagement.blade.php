@@ -15,12 +15,13 @@
 
           @foreach($photos['photo_path'] as $photo)
           <input id="{{$i.'a'}}" type="hidden" name="photos_path[]" value="{{$photo.'@'}}">
+          <input id="{{'grid'.$i.'a'}}" type="hidden" name="grid[]" value="{{$photos['grid'][$i]}}">
           <div class="col-md-3" align='center'>
               <div class="col-md-12 thumbnail">
                   <img  src="{{$photo}}"  style='height: 250px; object-fit: container'/><br>
                   <div>
                     <label for="grid">ขนาด Grid : </label>
-                    <select class="" name="grid[]" id='grid'>
+                    <select id='{{'grid'.$i}}'>
                       <option value="1" @if($photos['grid'][$i]==1) selected @endif>2x2</option>
                       <option value="2"@if($photos['grid'][$i]==2) selected @endif>3x3</option>
                       <option value="3" @if($photos['grid'][$i]==3) selected @endif>3x4</option>
@@ -46,24 +47,20 @@
 
     $('.btn-danger').click( function () {
  if(confirm('คุณต้องการลบรูปนี้ใช่หรือไม่')){
-        var c = $(this).attr('id');
-        var value = $('#'+c+'a').attr("value");
+        var getId = $(this).attr('id');
+        var value = $('#'+getId+'a').attr("value");
         value = value.slice(0,(value.length-1));
-        $('#'+c+'a').val(value);
+        $('#'+getId+'a').val(value);
       $(this).parent().parent().parent().remove();
       }
     })
 
-  $('.btn-danger').click(function () {
-  //  var src = $(this).attr('id');
-//   alert(src);
-//     $.ajax({
-//       type: "POST",
-//       url: "./delete/"+src,
-//
-// });
-  // $(this).remove();
-  });
+    $('select').change(function () {
+      var getId = $(this).attr('id');
+      
+       $('#'+getId+'a').val($(this).find(":selected").attr('value'));
+
+    });
 
 
 

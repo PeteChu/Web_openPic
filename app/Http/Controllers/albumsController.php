@@ -114,15 +114,17 @@ class albumsController extends Controller
       $i = 0;
       foreach ($getpath as $path) {
         $pathDe = substr($path,1,strlen($path));
-      //  DB::table('products_photos')->where('photo_path',$pathDe)->update(['grid'=>$getgrid[$i++]]);
+        $pathforG = substr($pathDe,0,strlen($pathDe)-1);
+       DB::table('products_photos')->where('photo_path',$pathforG)->update(['grid'=>$getgrid[$i]]);
         if(File::exists($pathDe)){
         DB::table('products_photos')->where('photo_path',$pathDe)->delete();
           File::delete($pathDe);
         }
+        $i++;
       }
 
 
-    return $getgrid;
+    return "เรียบโร้ยยย";
 
 
 
