@@ -73,7 +73,7 @@ class UploadController extends Controller
             // $filename = $photo->store("photos/$Username/$albumName");
 
             ProductsPhoto::create([
-              'photo_path'=>"/storage/photos/$Username/$albumName/".$photo->getClientOriginalName(),
+              'photo_path'=>"storage/photos/$Username/$albumName/".$photo->getClientOriginalName(),
               'album_name'=>$albumName,
               'grid'=>$grid,
               'uid'=>json_decode($id,true)[0]['id']

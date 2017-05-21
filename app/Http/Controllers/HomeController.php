@@ -37,6 +37,9 @@ class HomeController extends Controller
       $path = DB::table('products_photos')->select('photo_path','grid')->where('album_name',$name)->where('uid',$id)->get();
       $path = json_decode($path,true);
       $len = count($path);
+      for ($i = 0;$i<$len;$i++ ) {
+        $path[$i]['photo_path'] = '/'.$path[$i]['photo_path'];
+      }
       $path[$len] = $name;
 
       return view('play',compact('path'),compact('no'));

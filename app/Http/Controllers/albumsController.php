@@ -30,7 +30,7 @@ class albumsController extends Controller
        $path = json_decode($path,true);
          $path_photo[0][$i] = $album[$i]['album_name'];
         for($k = 0;$k<count($path);$k++)
-          $path_photo[$album[$i]['album_name']][$k] = $path[$k]['photo_path'];
+          $path_photo[$album[$i]['album_name']][$k] = "/".$path[$k]['photo_path'];
 
       }
         return view('album',compact('path_photo'));
@@ -83,7 +83,7 @@ class albumsController extends Controller
       $photos = array();
 
       for($i = 0;$i<count($database);$i++){
-        $photos['photo_path'][$i] = $database[$i]['photo_path'];
+        $photos['photo_path'][$i] = '/'.$database[$i]['photo_path'];
         $photos['grid'][$i] = $database[$i]['grid'];
       }
 
@@ -109,17 +109,23 @@ class albumsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(){
-
-      if(File::exists('storage/photos/admin/1/1.jpg')){
-        File::delete('storage/photos/admin/1/1.jpg');
-        return 'found, deleted';
-      }else {
-        return 'not found';
+    $getpath = $_POST['photos_path'];
+    $getgrid = $_POST['grid'];
+      $i = 0;
+      foreach ($getpath as $path) {
+        $pathDe = substr($path,1,strlen($path));
+      //  DB::table('products_photos')->where('photo_path',$pathDe)->update(['grid'=>$getgrid[$i++]]);
+        if(File::exists($pathDe)){
+        DB::table('products_photos')->where('photo_path',$pathDe)->delete();
+          File::delete($pathDe);
+        }
       }
 
-    //   Storage::delete($photo_path);
-    // //  DB::table('products_photos')->where('photo_path',$photo_path)->delete();
+
+    return $getgrid;
+
 
 
     }
+
 }
