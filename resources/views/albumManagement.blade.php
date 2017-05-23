@@ -67,7 +67,6 @@
              if(str[len-1]=='@'){
              str = str.slice(0,(len-1));
              tag[i].value = str;
-          console.log(tag[i].value);
 }
         }
          $('.btn-danger').parent().parent().parent().remove();
