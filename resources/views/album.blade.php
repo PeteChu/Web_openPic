@@ -33,17 +33,7 @@
     </div>
   </div>
 </div>
-
-@if(isset($message))
-<div class="col-md-12">
-  <div class='alert alert-success'>
-    {{$message}}
-  </div>
-</div>
-@endif
-
 @stop
-
 
 @section('style')
 

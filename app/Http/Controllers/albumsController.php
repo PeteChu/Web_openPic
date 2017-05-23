@@ -126,5 +126,6 @@ class albumsController extends Controller
 
       return $this->index()->with('message', 'เปลี่ยนแปลงข้อมูลอัลบั้มสำเร็จ.');
     }
+  
 
 }
