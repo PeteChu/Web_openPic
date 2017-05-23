@@ -23,7 +23,7 @@
                      <img src="{{$path_photo[$name][0]}}" style='height: 250px; object-fit: container'/>
                      <label>ชื่ออัลบั้ม: {{$name}}</label><br>
                      <a href = "/play/{{$name}}/{{0}}" class='btn btn-success'>เล่น</a>
-                     <a href = "/albummanage/{{$name}}" class='btn btn-success'>จัดการอัลบั้ม</a>
+                     
                    </div>
                  </div>
 
