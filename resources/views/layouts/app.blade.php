@@ -61,8 +61,6 @@
                           <li><a href="{{ url('/') }}">หน้าแรก</a></li>
                           <li><a href="{{ url('/album') }}">อัลบั้ม</a></li>
                           <li><a href="{{ url('/upload') }}">อัพโหลดรูปภาพ</a></li>
-                          <li><a href="#"></a></li>
-                          <li><a href="#"></a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
