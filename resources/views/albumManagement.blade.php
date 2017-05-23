@@ -59,10 +59,6 @@
     });
     $('#404').click(function () {
        if(confirm('คุณต้องการลบรูปทั้งอัลบั้มใช่หรือไม่(อัลบั้มจะหายไป)')){
-        //  var getId = $('.btn-danger').attr('id');
-        //  var value = $('#'+getId+'a').attr("value");
-        //  value = value.slice(0,(value.length-1));
-      //   $('#'+getId+'a').val(value);
         var tag = document.getElementsByTagName('input');
         var length = tag.length;
         for (var i = 0; i < tag.length; i++) {
@@ -71,7 +67,7 @@
              if(str[len-1]=='@'){
              str = str.slice(0,(len-1));
              tag[i].value = str;
-          console.log(tag[i].value);
+          
 }
         }
          $('.btn-danger').parent().parent().parent().remove();
