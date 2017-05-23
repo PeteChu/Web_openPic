@@ -22,13 +22,13 @@
     @if(($no-1)>=0)
     <a href=" /play/{{$path[$len-1]}}/{{$no-1}} "><button class="btn btn-success" type="button" name="button">รูปก่อนหน้า</button></a>
     @else
-    <a href=" #"><button class="btn btn-success" type="button" name="button">รูปก่อนหน้า</button></a>
+    <button class="btn btn-success" type="button" name="button" id='previous'>รูปก่อนหน้า</button>
     @endif
     <button class="btn btn-success" type="button" name="button" id='answer'>เฉลย</button>
     @if(($no+1)<$len-1)
     <a href=" /play/{{$path[$len-1]}}/{{$no+1}} "><button class="btn btn-success" type="button" name="button">รูปต่อไป</button></a>
     @else
-    <a href="#"><button class="btn btn-success" type="button" name="button">รูปต่อไป</button></a>
+    <button class="btn btn-success" type="button" name="button" id='forward'>รูปต่อไป</button>
     @endif
    </div>
 
@@ -42,7 +42,7 @@
   var image = new Image();
 
     $(document).ready(function () {
-      //670505
+
       var image = new Image();
       image.onload = function () {
         $('table').css('width', this.width)
@@ -60,6 +60,14 @@
 
       $('#answer').click(function () {
         $('td').css('visibility', 'hidden');
+      })
+
+      $('#previous').click(function () {
+        alert('ไม่สามารถกลับไปรูปก่อนหน้าได้ เนื่องจากไม่มีรูป.');
+      })
+
+      $('#forward').click(function () {
+        alert('ไม่สามารถไปรูปต่อไปได้ เนื่องจากไม่มีรูป.');
       })
 
     });

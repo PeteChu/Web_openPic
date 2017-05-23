@@ -31,6 +31,11 @@ class HomeController extends Controller
       return view('album');
     }
 
+    public function welcome()
+    {
+      return view('welcome');
+    }
+
     public function play($name,$no){
       $id = Auth::user();
       $id = $id->id;
