@@ -5,7 +5,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3>ปรับแต่งอัลบั้มของคุณ</h3>
-        <button type="bsubmit" class='btn ' id="404" >ลบอัลบั้ม</button>
+        <button type="bsubmit" class='btn' style='background-color: rgb(244, 143, 69);' id="404" >ลบอัลบั้ม</button>
 
 
       </div>
