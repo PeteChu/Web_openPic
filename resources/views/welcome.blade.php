@@ -18,6 +18,18 @@
             </div>
             <div class="panel-body">
 
+               @foreach ($path_photo[0] as $name)
+
+                 <div class="col-md-3 " align='center'>
+                   <div class="col-md-12 thumbnail">
+                     <img src="{{$path_photo[$name][0]}}" style='height: 250px; object-fit: container'/>
+                     <label>ชื่ออัลบั้ม: {{$name}}</label><br>
+                     <a href = "/play/{{$name}}/{{0}}" class='btn btn-success'>เล่น</a>
+                     <a href = "/albummanage/{{$name}}" class='btn btn-success'>จัดการอัลบั้ม</a>
+                   </div>
+                 </div>
+
+               @endforeach
             </div>
 
           </div>
