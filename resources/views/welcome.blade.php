@@ -18,7 +18,9 @@
             </div>
             <div class="panel-body">
               @if(count($path_photo)==0)
-                <h1>ไม่มีรูปครับ สัตว์ปีก</h1>
+
+                <h1>ไม่มีอัลบั้ม กรุณาอัพโหลดรูปภาพเพื่อสร้างอัลบั้ม</h1>
+
               @else
                @foreach ($path_photo[0] as $name)
 

@@ -18,7 +18,8 @@
               <label>ชื่ออัลบั้ม</label>
               <input type="text" class='form-control' name="albumName" />
               <input type="text" name="username" value="{{ Auth::user()->name }}" hidden>
-              <br /><br />
+              <br />
+              <p style="color: red;">*รูปภาพที่มีขนาดมากกว่า 1024 x 768 จะถูกลดขนาดลงเหลือ 1024 x 768</p>
               <input id="input-id" type="file" name="photos[]" multiple data-preview-file-type="text" >
             </div>
           </div>
@@ -52,6 +53,7 @@
     $(document).ready( function() {
       $('#input-id').fileinput({
         allowedFileExtensions:['jpg','bmp','png'],
+        maxFileSize: 5000,
       });
     });
   </script>
