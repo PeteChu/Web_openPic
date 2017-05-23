@@ -10,13 +10,6 @@
   <div class="panel panel-default">
     <div class="panel-heading"><h3>อัพโหลดไฟล์</h3></div>
       <div class="panel-body">
-        @if (count($errors) > 0)
-          <ul>
-            @foreach ($errors->all() as $error)
-              <li>{{$error}}</li>
-            @endforeach
-          </ul>
-        @endif
 
         <form action="/upload" method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
@@ -39,6 +32,14 @@
   <div class='alert alert-success'>
     {{$success}}
   </div>
+  @endif
+
+  @if (count($errors) > 0)
+    @foreach ($errors->all() as $error)
+      <div class="alert alert-danger">
+        {{$error}}
+      </div>
+    @endforeach
   @endif
 @stop
 

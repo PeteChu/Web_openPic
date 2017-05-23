@@ -31,6 +31,7 @@ class HomeController extends Controller
       return view('album');
     }
 
+
     public function welcome(){
       $id = DB::table('users')->select('id')->where('name','quickplay')->get();
       $id = json_decode($id,true);
