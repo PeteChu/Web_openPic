@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Storage;
 use File;
+use Route;
 
 class albumsController extends Controller
 {
@@ -123,11 +124,7 @@ class albumsController extends Controller
         $i++;
       }
 
-
-    return "เรียบโร้ยยย";
-
-
-
+      return $this->index()->with('message', 'เปลี่ยนแปลงข้อมูลอัลบั้มสำเร็จ.');
     }
 
 }
